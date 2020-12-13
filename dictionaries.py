@@ -8,6 +8,12 @@ players = {
     "Mbappe": 150
 }
 
+
+
+
+
+
+
 print("Getting whole dictionary with keys and values: ",players)
 # The dict() constructor builds dictionaries directly from sequences of key-value pairs:
 print("Only keys: ", players.keys())
@@ -35,3 +41,5 @@ questions = ['name', 'quest', 'favorite color']
 answers = ['lancelot', 'the holy grail', 'blue']
 for q, a in zip(questions, answers):
     print('What is your {0}?  It is {1}.'.format(q, a))
+
+
