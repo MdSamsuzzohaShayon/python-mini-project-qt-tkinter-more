@@ -14,7 +14,7 @@ password = login_info["password"]
 
 
 
-def send_mail(text="Email body", subject="Hello world", from_email=login_info['gmail'] , to_emails=None):
+def send_mail(text="Email body", subject="Hello world", from_email=login_info['gmail'] , to_emails=None, html=None):
     # https://docs.pytest.org/en/stable/assert.html
     # https://docs.python.org/3/library/functions.html#isinstance
     assert isinstance(to_emails, list)  # IT WILL GIVE AN ERROR IF THIS IS NOT A LIST
@@ -28,8 +28,9 @@ def send_mail(text="Email body", subject="Hello world", from_email=login_info['g
     txt_part = MIMEText(text, "plain")
     msg.attach(txt_part)
 
-    html_part = MIMEText("<h1 style='color: green; padding: 10px; background:purple'> This is working </h1>", "html")
-    msg.attach(html_part)
+    if html != None:
+        html_part = MIMEText(html, "html")
+        msg.attach(html_part)
 
 
 
@@ -50,4 +51,4 @@ def send_mail(text="Email body", subject="Hello world", from_email=login_info['g
 
 
 
-send_mail(to_emails=['mdshayon0@gmail.com'])
+# send_mail(to_emails=['mdshayon0@gmail.com'])
