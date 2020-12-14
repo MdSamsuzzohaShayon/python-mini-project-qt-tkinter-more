@@ -6,7 +6,6 @@ from formatting import format_msg
 from send_mail import send_mail
 
 
-
 def send(name, website=None, to_email=None, verbose=False):
     assert to_email != None
     format_msg(my_name="Justin", my_website="cfe.sh")
@@ -18,7 +17,7 @@ def send(name, website=None, to_email=None, verbose=False):
         print("web site is none")
 
     if verbose:
-        print("Varbase is false: ",name, website, to_email)
+        print("Varbase is false: ", name, website, to_email)
 
     """
     print("=========================")
@@ -29,16 +28,19 @@ def send(name, website=None, to_email=None, verbose=False):
     """
 
     # send the message
-    # send_mail(text, subject, from_email, to_emails, html)
-    send_mail(text=msg, to_emails=[to_email], html=None)
+    sent = None
+    try:
+        # send_mail(text, subject, from_email, to_emails, html)
+        send_mail(text=msg, to_emails=[to_email], html=None)
+        sent = True
+    except:
+        sent = False
+        pass
+    print("Sent: ",sent)
+    return sent
 
 
-
-
-send(name="Shayon",to_email= "mdshayon0@gmail.com")
-
-
-
+send(name="Shayon", to_email="mdshayon0@gmail.com")
 
 print("All info: ", sys.argv)
 """
@@ -57,5 +59,3 @@ if __name__ == "__main__":
     response = send(name, to_email=email, verbose=True)
     # print("Response ",response)
 """
-
-
