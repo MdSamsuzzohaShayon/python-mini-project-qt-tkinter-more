@@ -36,26 +36,37 @@ def send(name, website=None, to_email=None, verbose=False):
     except:
         sent = False
         pass
-    print("Sent: ",sent)
+    print("Sent: ", sent)
     return sent
 
 
-send(name="Shayon", to_email="mdshayon0@gmail.com")
-
-print("All info: ", sys.argv)
-"""
+# THIS IS DEFAULT CALL FOR OUR MODULE
+# THIS IS MORE APPROPRIATE IN PYTHON THAN CALLING OUTSIDE
+# IF WE CALL ANY FUNCTION BY USING THIS IT WON'T CALL THE WHOLE FUNCTION
 if __name__ == "__main__":
-    # print("Sys.argv: ",sys.argv)
-    name = "Unknown"
     print("Default call of a function ")
+    send(name="Shayon", to_email="mdshayon0@gmail.com")
+
+    """
+    # PASSING THE ARGUMENTS THOUGH TERMINAL AND USE THE VALUE IN OUR PROJECT 
+    print("All info: ", sys.argv)
+    name = "Unknown"
+    
     print("Length or argv: ",len(sys.argv))
+    
+    # THIS WILL GRAB THE FIRST VALUE FROM TERMINAL COMMAND
+    # python3 send.py value_one
+    # FROM THE COMMAND AVOBE VALUE_ONE IS ACCESSABLE USING SYS.ARGV[1] 
     if len(sys.argv) > 1:
         name = sys.argv[1]
         print("name: ", name)
     email = None
+    
+    # THIS WILL GRAB THE FIRST VALUE FROM TERMINAL COMMAND
+    # python3 send.py value_one value_two
     if len(sys.argv) > 2:
         email = sys.argv[2]
         print("Email: ", email)
     response = send(name, to_email=email, verbose=True)
     # print("Response ",response)
-"""
+    """
