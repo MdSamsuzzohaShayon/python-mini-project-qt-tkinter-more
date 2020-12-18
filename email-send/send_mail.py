@@ -2,7 +2,7 @@
 from keys import login_info
 import smtplib
 from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart   # FOR BOTH BULNK TEXT EMAIL AND AN HTMLEMAIL
+from email.mime.multipart import MIMEMultipart   # FOR BOTH BULNK TEXT EMAIL AND AN HTML EMAIL
 
 
 # LOGIN INFO IS A DICTINORY CONTAINING EMAIL AND PASSWORD
@@ -49,6 +49,10 @@ def send_mail(text="Email body", subject="Hello world", from_email=login_info['g
     server.quit()
 
 
+
+
+if __name__ == '__main__':
+    send_mail(to_emails=['mdshayon0@gmail.com'])
 
 
 # send_mail(to_emails=['mdshayon0@gmail.com'])
